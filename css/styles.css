@@ -1,0 +1,44 @@
+
+:root{
+
+    --bg-primary: #F3F5FC;
+    --bg-secundary: #072B61;
+    --primary: #0A3871;
+    --secundary: #FFFFFF;
+    --text-primary: #343A40;
+    --text-secundary: #495057;
+    --text-warning: #d62828;
+    --bg-modal: #343A40bd;
+
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*<--------------footer------------------>*/
+
+footer{
+    margin: 1.5rem 0 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer a:hover{
+    transform: scale(1.1);
+}
+
+footer a{
+    transition: transform 0.5s;
+}
+
+
+
+/*<-------------------------------------->*/
