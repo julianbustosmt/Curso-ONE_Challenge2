@@ -1,0 +1,42 @@
+.btn{
+    width: 100%;
+    height: 4.2rem;
+    margin: 0.3rem 0 0.3rem ;
+    border: none;
+    border-radius: 1.3rem;
+    background-color: var(--primary);
+    color: var(--text-primary);
+    transition: .3s ease all;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.2rem;
+}
+
+.btn span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.btn::after{
+    content: "";
+	width: 1px;
+	height: 1px;
+	background: none;
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	transition: .3s ease-in-out all;
+	border-radius: 50px;
+	transform-origin: center;
+}
+
+.btn:hover::after{
+    transform: scale(250);
+	background: var(--text-warning);
+}
+
+.btn:hover {
+	background: var(--bg-secundary);
+}
