@@ -1,17 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+English+SC&display=swap');
+
+/* font-family: 'Creepster', cursive; */
+:root{
+
+    --bg-primary: #F5F3F4;
+    --bg-secundary: #A4161A;
+    --primary: #0B090A;
+    --secundary: #FFFFFF;
+    --text-primary: #FFFFFF;
+    --text-secundary: #495057;
+    --text-warning: #BA181B;
+    --bg-modal: #343A40bd;
+
+}
+
+/*********************Mobile***************************/
+
 body{
-    font-family: 'Inter', sans-serif;
+    font-family: 'IM Fell English SC', serif;
     background-color: var(--bg-primary);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 main{
-    width: 80%;
-    margin: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3rem
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hidden{
+    display: none;
 }
 
 /*<----------------Header---------------->*/
@@ -20,6 +43,57 @@ main{
     margin: 1rem;
 }
 
+/*<-------------------------------------->*/
+
+
+/*<----------------Start game---------------->*/
+
+.img-hangedMan{
+    width: 100%;
+}
+
+.start-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+/*<-------------------------------------->*/
+/*<--------------Game-------------------->*/
+.canva-HangedMan{
+    height: 400px;
+    width: 300px;
+    max-width: 1200px;
+    max-height: 800px;
+}
+
+.word{
+    justify-content: center;
+    display: flex;
+    gap: 5px;
+    min-height: 30px;
+}
+
+.letter{
+    font-size: 1.5rem;
+    width: 30px;
+    min-width: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--bg-secundary);
+    border-radius: 3px ;
+}
+
+.wrongLetters{
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    max-width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    text-align: center;
+}
 /*<-------------------------------------->*/
 
 /*<--------------footer------------------>*/
