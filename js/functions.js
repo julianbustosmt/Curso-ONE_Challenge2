@@ -1,7 +1,7 @@
 const transition = (scope) => {
     if(scope == "start") {
         imgHangedMan.classList.remove('hidden')
-        canvaHangedMan.classList.add('hidden')
+        sectionCanva.classList.add('hidden')
         
         txtNewGame.innerHTML = "Iniciar juego"
         bntNewGame.classList.remove('btn-newGame')
@@ -10,10 +10,10 @@ const transition = (scope) => {
         txtDesist.innerHTML = "Nueva palabra"
         btnDesist.classList.remove('btn-desist')
         btnDesist.classList.add('btn-newWord')
-
+        
     } else if(scope == "newGame"){
         imgHangedMan.classList.add('hidden')
-        canvaHangedMan.classList.remove('hidden')
+        sectionCanva.classList.remove('hidden')
         
         txtStartGame.innerHTML = "Nuevo juego"
         btnStartGame.classList.add('btn-newGame')

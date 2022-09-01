@@ -2,7 +2,7 @@
 const html = document.querySelector('html')
 
 const imgHangedMan = document.getElementById('img-hangedMan')
-const canvaHangedMan = document.getElementById('canva-hangedMan')
+const sectionCanva = document.querySelector('.hanged-man')
 const dashes = document.querySelector('.dashes')
 const inputWord = document.querySelector('.word')
 
@@ -33,4 +33,5 @@ html.addEventListener("keydown",(event)=>{
     letter = event.key.toLocaleLowerCase()
     machWord(letter,word)
     showWrongLetter(wrongLetters)
+    console.log(divHangedMan)
 })

@@ -62,11 +62,19 @@ main{
 
 /*<-------------------------------------->*/
 /*<--------------Game-------------------->*/
-.canva-HangedMan{
+
+
+.canva-hangedMan{
     height: 400px;
     width: 300px;
     max-width: 1200px;
     max-height: 800px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-property: opacity, left;
+    transition-duration: 3s, 5s;
+    margin: 0;
 }
 
 .word{
