@@ -2,6 +2,7 @@
 
 const chooseWord = () =>{
     let words = ['python','java','javascript','html','css','typescript','kotlin','swift','php']
+/*     let words = ['perro','gato','vaca','toro','leon','manati','raton','jaguar','elefante','jirafa','trigre','pantera'] */
     return words[Math.floor(Math.random()*words.length)]
 }
 

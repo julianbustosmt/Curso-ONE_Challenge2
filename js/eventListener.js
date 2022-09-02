@@ -33,5 +33,4 @@ html.addEventListener("keydown",(event)=>{
     letter = event.key.toLocaleLowerCase()
     machWord(letter,word)
     showWrongLetter(wrongLetters)
-    console.log(divHangedMan)
 })
