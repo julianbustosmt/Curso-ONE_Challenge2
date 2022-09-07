@@ -91,25 +91,25 @@ const drawHangMan = (attempts) => {
             divHangedMan.style.backgroundImage = "";
             break;
         case 7:
-            divHangedMan.style.backgroundImage = "url(../img/HangedMan-Draw/Gallow.svg)";
+            divHangedMan.style.backgroundImage = "url(.././img/HangedMan-Draw/Gallow.svg)";
             break;
         case 6:
-            divHangedMan.style.backgroundImage = "url('../../img/HangedMan-Draw/Head.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/Head.svg')";
             break;
         case 5:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/Torso.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/Torso.svg')";
             break;
         case 4:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/Right arm.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/Right arm.svg')";
             break;
         case 3:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/Left arm.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/Left arm.svg')";
             break;
         case 2:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/Right leg.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/Right leg.svg')";
             break;
         case 1:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/HangedMan.svg')";
+            divHangedMan.style.backgroundImage = "url('.././img/HangedMan-Draw/HangedMan.svg')";
             break;
     }
 }
