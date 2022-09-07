@@ -122,3 +122,43 @@ footer a{
 }
 
 /*<-------------------------------------->*/
+
+/*****************************************************************/
+/*********************Tablet & Desktop***************************/
+
+@media screen and (min-width: 450px){
+
+    .img-hangedMan{
+        height: 600px;
+    }
+
+    .start-game{
+        flex-direction: row;
+        gap: 32px;
+    }
+    
+    .canva-hangedMan{
+        height: 500px;
+        width: 400px;
+    }
+
+    .letter{
+        font-size: 2.6rem; 
+        width: 42px;
+    }
+    
+    .wrongLetters{
+        font-size: 2.6rem;
+    }
+
+    footer{
+        gap: 1.6rem;
+    }
+
+    footer a{
+        scale: 1.3;
+    }
+
+}
+
+/*****************************************************************/
