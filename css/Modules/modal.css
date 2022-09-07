@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+English+SC&display=swap');
+/*<----------------Modal---------------->*/
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-modal);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s .2s;
+    --transform: translateY(-100vh) ;
+    --transition: transform .4s
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .3s;
+    --transform: translateY(0) ;
+    --transition: transform .2s .2s
+}
+
+.modal-container{
+    width: 50%;
+    background-color: var(--bg-primary);
+    margin: auto;
+    max-width: 200px;
+    max-height: 90%;
+    border-radius: 1.5rem;
+    padding: 1.5rem 1rem;
+    display: grid;
+    place-items: center;
+    grid-auto-columns: 100%;
+    position: relative;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal-close{
+    font-size: 1.5rem;
+    margin: 0.5rem 0.8rem 0 ;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    transition: background-color .3s;
+    transition: transform .4s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-close:hover{
+    transform: scale(1.2);
+}
+
+.modal-img{
+    width: 70px;
+    display: none;
+}
+
+
+.modal-img--active{
+    display: block;
+}
+
+.modal-title{
+    color: var(--primary);
+    margin: 0 auto 0.5rem;
+    text-align: center;
+}
+
+.modal-title--loser{
+    font-family: 'Creepster', cursive; ;
+    color: var(--bg-secundary);
+}
+
+.modal-paragraph{
+    color: var(--text-secundary);
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 400;
+    
+}
+
+.btn-modal{
+    height: 50px;
+    font-size: 1rem;
+    width: 80%;
+    margin-top: 10px;
+}
+/*<-------------------------------------->*/

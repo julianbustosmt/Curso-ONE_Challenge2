@@ -1,55 +1,96 @@
 /** Choose word */
 
-const chooseWord = () =>{
-    let words = ['python','java','javascript','html','css','typescript','kotlin','swift','php']
-/*     let words = ['perro','gato','vaca','toro','leon','manati','raton','jaguar','elefante','jirafa','trigre','pantera'] */
-    return words[Math.floor(Math.random()*words.length)]
+const chooseWord = () => {
+    let words = ['python', 'java', 'javascript', 'html', 'css', 'typescript', 'kotlin', 'swift', 'php']
+    /*     let words = ['perro','gato','vaca','toro','leon','manati','raton','jaguar','elefante','jirafa','trigre','pantera'] */
+    return words[Math.floor(Math.random() * words.length)]
 }
 
-/* const createDash = (word) =>{
-    let dashes = "_ ".repeat(word.length)
-    return dashes
-} */
-
-const createWord = (word) =>{
-
-    for(let i = 0; i<word.length; i++){
+const createWord = (word) => {
+    const inputWord = document.querySelector('.word')
+    for (let i = 0; i < word.length; i++) {
         let letter = document.createElement('div')
         letter.classList.add(`letter${i}`, 'letter')
         inputWord.appendChild(letter)
     }
 }
 
-let wrongLetters = []
-let attempts = 8
+const cleanWord = (word) => {
+    const divWord = document.querySelector(".word")
+    for (let i = 0; i < word.length; i++) {
+        let letter = document.querySelector(`.letter${i}`)
+        divWord.removeChild(letter)
+    }
+}
 
-const machWord = (letter, word) =>{
+let wrongLetters = []
+let correctLetter = []
+let attempts = 8
+let inputWord = 0;
+let win = false
+
+const machWord = (letter, word) => {
     let wordLetters = ([...word]) /** Crea arreglo con la letras de las palabras seleccionada al azar */
     let expresion = /[A-Za-z]/
-    let especial = ["shift","alt","tab","enter","backspace","control","capslock","arrowleft","arrowup","arrowright","arrowright","delete","end","pagedown","pageup","numlock","insert","home"]
+    let especial = ["shift", "alt", "tab", "enter", "backspace", "control", "capslock", "arrowleft", "arrowup", "arrowright", "arrowright", "delete", "end", "pagedown", "pageup", "numlock", "insert", "home"]
 
-    for(let i = 0; i<word.length; i++){
-        if(word[i] == letter){
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] == letter && attempts > 0) {
             let divLetter = document.querySelector(`.letter${i}`)
             divLetter.textContent = letter.toUpperCase()
-        }else if(!wrongLetters.includes(letter) && !wordLetters.includes(letter) && expresion.test(letter) && !especial.includes(letter.toLowerCase()) && letter != " "){
+            if(!correctLetter.includes(letter)){
+                inputWord += findUniqueLetter(word,letter)
+                correctLetter.push(letter)  
+            }
+        }   
+        else if (
+            !wrongLetters.includes(letter) && 
+            !wordLetters.includes(letter) &&
+            expresion.test(letter) &&
+            !especial.includes(letter.toLowerCase()) &&
+            letter != " " &&
+            attempts > 0 && 
+            !win
+            ){
             wrongLetters.push(letter)
-            attempts --
+            attempts--
             drawHangMan(attempts)
         }
     }
 }
 
-const showWrongLetter = (wrongLetters) =>{
-    let divWrongLetter = document.querySelector('.wrongLetters')
+const findUniqueLetter = (word, letter) =>{
+    let unique = 0
+    for (i = 0; i< word.length ;i++ ){
+        if(word[i] == letter){
+            unique += 1
+        }
+    }
+    return unique
+}
+
+const decideWinner = () => {
+    if (attempts <= 0) {
+        modalContent('Lo siento, has perdido',`La palabra era: ${word}`,'loser')
+    } else if (attempts > 0 && inputWord == word.length) {
+        win = true
+        modalContent('Felicitaciones, ganaste','Has salvado una vida','winner')
+    }
+}
+
+const showWrongLetter = (wrongLetters) => {
+    const divWrongLetter = document.querySelector('.wrongLetters')
     divWrongLetter.textContent = wrongLetters
 }
 
-
 const divHangedMan = document.querySelector('.canva-hangedMan')
-const drawHangMan = (attempts,img) =>{
-    switch(attempts){
-        case 7: 
+const drawHangMan = (attempts) => {
+    console.log("intentos", attempts)
+    switch (attempts) {
+        case 8:
+            divHangedMan.style.backgroundImage = "";
+            break;
+        case 7:
             divHangedMan.style.backgroundImage = "url(../img/HangedMan-Draw/Gallow.svg)";
             break;
         case 6:
@@ -70,8 +111,34 @@ const drawHangMan = (attempts,img) =>{
         case 1:
             divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/HangedMan.svg')";
             break;
-        case 0:
-            divHangedMan.style.backgroundImage = "url('../img/HangedMan-Draw/Gallow.svg')";
-            break;
     }
+}
+
+const startGame = () =>{
+    transition("newGame")
+    if (word == "") {
+        word = chooseWord()
+        console.log(word)
+    }
+    createWord(word)
+    html.addEventListener("keydown", (event) => {
+        letter = event.key.toLocaleLowerCase()
+        machWord(letter, word)
+        showWrongLetter(wrongLetters)
+        decideWinner()
+    }) 
+}
+
+const newGame = () =>{
+    cleanWord(word)
+    word = ""
+    attempts = 8
+    wrongLetters = []
+    correctLetter = []
+    attempts = 8
+    inputWord = 0;
+    win = false
+    drawHangMan(attempts)
+    showWrongLetter(wrongLetters)
+    startGame()
 }

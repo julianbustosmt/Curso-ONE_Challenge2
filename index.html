@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/Layout/normalize.css">
     <link rel="stylesheet" href="./css/Layout/layout.css">
     <link rel="stylesheet" href="./css/Modules/buttons.css">
+    <link rel="stylesheet" href="./css/Modules/modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Ahorcado</title>
 </head>
@@ -20,21 +21,38 @@
 
     <main>
         <img src="img/hanged-man.svg" alt="img-hangedMan" class="img-hangedMan" id="img-hangedMan">
-        <section class="hanged-man hidden" >
-            <div class="canva-hangedMan" id="canvaHangedMan">
-
+        <section class="hanged-man hidden">
+            <div class="canva-hangedMan" id="canvaHangedMan"></div>
+            <div class="word">
             </div>
-            <div>
-                <div class="word">
-                </div>
-                <div class="wrongLetters">
-                </div>
-
+            <div class="wrongLetters">
             </div>
-        </section>  
+        </section>
         <section class="start-game">
-            <button class = "btn btn-startGame" id="btn-starGame"><span class = "txt-startGame">Iniciar Juego</span></button>
-            <button class = "btn btn-newWord" id="btn-newWord" onclick=""><span class = "txt-newWord">Agregar nueva palabra</span></button>
+            <button class="btn btn-startGame" id="btn-starGame"><span class="txt-startGame">Iniciar
+                    Juego</span></button>
+            <button class="btn btn-newWord" id="btn-newWord" onclick=""><span class="txt-newWord">Agregar nueva
+                    palabra</span></button>
+            <button class="btn btn-newGame hidden" id="btn-newGame"><span class="txt-startGame">Nuevo
+                    Juego</span></button>
+            <button class="btn btn-desist hidden" id="btn-desist" onclick=""><span
+                    class="txt-desist">Desistir</span></button>
+        </section>
+
+        <section id="modal" class="modal">
+
+            <div class="modal-container">
+                <a class="modal-close" href="#"><img src="./img/icons/Modal-close.svg" alt="Cerrar modal"></a>
+                <img src="./img/icons/crown.svg" alt="imagen-corona" class="modal-img" id="img-winner">
+                <img src="./img/icons/executioner.svg" alt="imagen-verdugo" class="modal-img" id="img-loser">
+                <h2 class="modal-title"></h2>
+                <p class="modal-paragraph"></p>
+                <input type="text" name="input-NewWord" id="inputNewWord">
+                <button class="btn btn-modal playAgain" id='playAgain'><span>Jugar de Nuevo</span></button>
+                <button class="btn btn-modal" id='newWord'><span>Jugar</span></button>
+
+            </div>
+
         </section>
     </main>
 
@@ -49,4 +67,5 @@
     <script src="./js/eventListener.js"></script>
     <script src="./js/functions.js"></script>
 </body>
+
 </html>

@@ -73,9 +73,7 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition-property: opacity, left;
-    transition-duration: 3s, 5s;
-    margin: 0;
+    margin: auto;
 }
 
 .word{
