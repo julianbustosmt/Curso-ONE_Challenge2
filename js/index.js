@@ -100,13 +100,13 @@ const drawHangMan = (attempts) => {
             divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/Torso.svg)";
             break;
         case 4:
-            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/Right arm.svg)";
+            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/RightArm.svg)";
             break;
         case 3:
-            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/Left arm.svg)";
+            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/LeftArm.svg)";
             break;
         case 2:
-            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/Right leg.svg)";
+            divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/RightLeg.svg)";
             break;
         case 1:
             divHangedMan.style.backgroundImage = "url(img/HangedMan-Draw/HangedMan.svg)";
